@@ -1,3 +1,5 @@
+// CodeSandbox Code //
+
 // The initial numbers that must be verified.
 const n1 = 10;
 const n2 = 15;
@@ -6,15 +8,15 @@ const n4 = 5;
 
 // Check one: add up to 50?
 const isSum50 = (n1 + n2 + n3 + n4) == 50;
-console.log(`The four numbers add up to 50 ${isSum50}`) // true
+console.log(`Do the four numbers add up to 50? ${isSum50}`) // true
 
 // Check two: at least two odd numbers?
 const isTwoOdd = (n1 % 2) + (n2 % 2) + (n3 % 2) + (n4 % 2) >= 2;
-console.log(`Variables n2 and n4 are odd${isTwoOdd}`) // true
+console.log(`Are the variables n2 and n4 odd? ${isTwoOdd}`) // true
 
 // Check three: no number larger than 25
 const isOver25 = n1 > 25 || n2 > 25 || n3 > 25 || n4 > 25;
-console.log(`There is no number larger than 25${isOver25}`) // ?
+console.log(`Is there is no number larger than 25? ${isOver25}`) // ?
 
 // Check four: all unique numbers
 const isUnique = n1 != n2 && n1 != n3 && n1 != n4 && n2 != n3 && n2 != n4 && n3 != n4;
@@ -22,30 +24,39 @@ console.log(isUnique) // true
 
 // Here, we put the results into a single variable
 const isValid = isSum50 && isTwoOdd && !isOver25 && isUnique;
-console.log(`The results/variables isSum50, isTwoOdd, isOver25 and isUnique combined${isValid}`) // true
+console.log(`Are the results/variables isSum50, isTwoOdd, isOver25 and isUnique combined? ${isValid}`) // true
 
-//Check if all numbers are divisible by 5.
+//---------------------------------------------------------------------------------------------//
+
+//  Part 1: Math Problems  //
+
+// 1.Check if all numbers are divisible by 5.
 let allNumBy5 = (n1, n2, n3, n4) % 5 === 0;
-console.log(`Verified that all numbers are divisible by 5 ${allNumBy5}`) // true
+console.log(`Are all numbers are divisible by 5? ${allNumBy5}`) // true
 
-//Check if the first number is larger than the last.
+// 2.Check if the first number is larger than the last.
 let n1n4 = (n1 > n4);
-console.log(`Verified the first number is larger than the last number ${n1n4}`) // true
+console.log(`Is the first number larger than the last number? ${n1n4}`) // true
 
-//Subtract first number from second number
+// 3.Subtract first number from second number
 let nr = (n2-n1);
-console.log(`Subtracted the first number from the second number ${nr}`) //  5
+console.log(`Subtracted the first number from the second number: ${nr}`) //  5
 
 //Multiply the result by the third number
 let n3n = (nr * n3);
-console.log (`Multiplied 5(nr) by the third number(n3) ${n3n}`) // 100
+console.log (`Multiplied 5(nr) by the third number(n3): ${n3n}`) // 100
 
 //Find the remainder of dividing the result by the fourth number
 let n4n = (n3n / n4);
-console.log(`Divided 100(n3n) by 5(n4) to get ${n4n}`) // 20
+console.log(`Divided 100(n3n) by 5(n4) to get: ${n4n}`) // 20
 
 let nchain = (n2 - n1) * n3 / n4;
 console.log(nchain) // 20
+
+// 4. Subtract 1st number from 2nd number, Multiply by 3rd number, Divide by 4th number (Refactored version)
+let equation = (n2 - n1) * n3 / n4;
+console.log(equation) // 20
+
 
 //Change the way that isOver25 calculates so that we do not need to use the NOT operator (!) in other logic comparisons. Rename the variable as appropriate.
 let lessThan25 = (n1, n2, n3, n4) < 25;
